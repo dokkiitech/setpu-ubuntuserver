@@ -53,6 +53,8 @@ echo "Node.js のバージョンを確認..."
 node -v
 
 echo "✅ Node.js 環境のセットアップが完了しました！"
+echo ""
+echo "※ 変更を反映するために、エディター（またはターミナル）を再起動してください。"
 """
     run_commands(script)
 
