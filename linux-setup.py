@@ -17,8 +17,13 @@ def setup_node():
     
     print("[3/5] Node.js (LTS) をインストール中...")
     run_command("curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash")
-    run_command("export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && \\ . \"$NVM_DIR/nvm.sh\" && nvm install --lts")
-    run_command("export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && \\ . \"$NVM_DIR/nvm.sh\" && nvm use --lts")
+    run_command("echo 'export NVM_DIR=\"$HOME/.nvm\"' >> ~/.bashrc")
+    run_command("echo '[ -s \"$NVM_DIR/nvm.sh\" ] && \\ . \"$NVM_DIR/nvm.sh\"' >> ~/.bashrc")
+    run_command("echo '[ -s \"$NVM_DIR/bash_completion\" ] && \\ . \"$NVM_DIR/bash_completion\"' >> ~/.bashrc")
+    run_command("source ~/.bashrc")
+    run_command("nvm install --lts")
+    run_command("nvm use --lts")
+    run_command("nvm alias default `nvm current`")
     
     print("[4/5] npm のバージョン確認...")
     run_command("npm -v")
