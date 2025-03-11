@@ -1,1 +1,1 @@
-# setpu-ubuntuserver
+# ubuntuserverでnode環境を構築するのを楽にするために
